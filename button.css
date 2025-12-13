@@ -1,0 +1,28 @@
+button {
+  padding: 1.5rem 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(45deg, #f7f7f7, #2825c6, #ffffff, #2825c6 );
+  background-size: 300%;
+  transition: 0.1s ease;
+  animation: flow 3s infinite alternate;
+}
+button:hover {
+  background-position: right;
+  transform: scale(1.02);
+}
+
+@keyframes flow {
+  0% {
+    background-position: left;
+  }
+   50% {
+    background-position: center;
+  }
+  100% {
+    background-position: right;
+  }
+}

@@ -1,0 +1,26 @@
+.cal{
+  font: optional;
+  width: 320px;
+  box-shadow: 1rem;
+  justify-content: space-around;
+}
+.display{
+   justify-content: center;
+  width: 320px;
+  height: 50px;
+  margin: 1rem;
+  box-shadow: 18pc;
+  background: #222;
+  color: aliceblue;
+  text-align: center;
+  font-size: 35px;
+
+}
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: 1.2rem;
+    width: 20rem;
+    height: 50px;
+    
+}
