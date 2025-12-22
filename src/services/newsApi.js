@@ -17,7 +17,7 @@ const MOCK_ARTICLES = [
         title: 'Review: The Ultimate Smart Home Hub',
         description: 'We tested the latest smart home gadgets to see which ones actually make life easier.',
         url: 'https://theverge.com',
-        urlToImage: 'https://images.unsplash.com/photo-1558002038-1091a1661116?auto=format&fit=crop&q=80&w=800',
+        urlToImage: 'https://images.unsplash.com/photo-1752262167753-37a0ec83f614?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c21hcnQlMjBob21lJTIwaHVifGVufDB8fDB8fHww',
         publishedAt: new Date(Date.now() - 86400000).toISOString(),
         content: '...'
     },
@@ -27,7 +27,7 @@ const MOCK_ARTICLES = [
         title: 'Global Markets Rally as Tech Stocks Soar',
         description: 'Major indices hit record highs today driven by semiconductor breakthroughs.',
         url: 'https://cnn.com',
-        urlToImage: 'https://images.unsplash.com/photo-1611974765270-ca12586343bb?auto=format&fit=crop&q=80&w=800',
+        urlToImage: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=800',
         publishedAt: new Date(Date.now() - 172800000).toISOString(),
         content: '...'
     },
@@ -37,7 +37,7 @@ const MOCK_ARTICLES = [
         title: 'Fullstack Interactions Ready',
         description: 'You can now like and comment on articles. Data is persisted in SQLite.',
         url: 'https://example.com/demo',
-        urlToImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800',
+        urlToImage: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&q=80&w=800',
         publishedAt: new Date().toISOString(),
         content: '...'
     },
@@ -47,7 +47,7 @@ const MOCK_ARTICLES = [
         title: 'Sustainable Architecture: Building for the Future',
         description: 'New eco-friendly materials are revolutionizing the construction industry.',
         url: '#',
-        urlToImage: 'https://images.unsplash.com/photo-1518005052304-a32d181907d7?auto=format&fit=crop&q=80&w=800',
+        urlToImage: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=800',
         publishedAt: new Date(Date.now() - 250000000).toISOString(),
         content: '...'
     },
@@ -57,7 +57,7 @@ const MOCK_ARTICLES = [
         title: 'The Next Generation of Quantum Computing',
         description: 'Major breakthroughs in qubit stability announced at global summit.',
         url: '#',
-        urlToImage: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800',
+        urlToImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800',
         publishedAt: new Date(Date.now() - 400000000).toISOString(),
         content: '...'
     },
@@ -67,7 +67,7 @@ const MOCK_ARTICLES = [
         title: 'Fusion Cuisine: East Meets West',
         description: 'Exploring the delicious combinations of Asian and European flavors.',
         url: '#',
-        urlToImage: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800',
+        urlToImage: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800',
         publishedAt: new Date(Date.now() - 600000000).toISOString(),
         content: '...'
     },
@@ -77,7 +77,7 @@ const MOCK_ARTICLES = [
         title: 'Hidden Gems of the Mediterranean',
         description: 'Escape the crowds and discover these untouched island paradises.',
         url: '#',
-        urlToImage: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&q=80&w=800',
+        urlToImage: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800',
         publishedAt: new Date(Date.now() - 800000000).toISOString(),
         content: '...'
     }

@@ -5,49 +5,45 @@ const HeroCard = ({ article }) => {
     if (!article) return null;
     const { urlToImage, title, description, source, publishedAt, url } = article;
 
-    const bgImage = urlToImage || 'https://via.placeholder.com/1200x600/0f172a/94a3b8?text=Breaking+News';
+    // Use a high-res placeholder if image is missing, but prefer the article image
+    const bgImage = urlToImage || 'https://via.placeholder.com/1600x900/0f172a/94a3b8?text=Breaking+News';
 
     return (
-        <a href={url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', marginBottom: '40px' }}>
-            <article style={{
+        <a href={url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', marginBottom: '60px' }}>
+            <article className="hero-card" style={{
                 position: 'relative',
                 width: '100%',
-                height: '500px',
-                borderRadius: '24px',
+                height: '75vh', // Much taller, immersive feel
+                maxHeight: '800px',
+                minHeight: '500px',
+                borderRadius: '12px', // Slightly sharper corners for a "news" feel
                 overflow: 'hidden',
-                boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-                transition: 'var(--transition)'
-            }}
-                onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'scale-[1.01]';
-                    e.currentTarget.querySelector('.hero-bg').style.transform = 'scale(1.05)';
-                }}
-                onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'none';
-                    e.currentTarget.querySelector('.hero-bg').style.transform = 'scale(1)';
-                }}
-            >
-                {/* Background Image */}
-                <div className="hero-bg" style={{
+                boxShadow: '0 30px 60px rgba(0,0,0,0.5)', // Deep shadow
+                isolation: 'isolate'
+            }}>
+                {/* Background Image Container */}
+                <div className="hero-bg-container" style={{
                     position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    backgroundImage: `url(${bgImage})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    transition: 'transform 0.7s ease'
-                }}></div>
+                    inset: 0,
+                    zIndex: -1,
+                    transition: 'transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                }}>
+                    <div className="hero-bg" style={{
+                        width: '100%',
+                        height: '100%',
+                        backgroundImage: `url(${bgImage})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        transition: 'transform 0.7s ease'
+                    }}></div>
+                </div>
 
-                {/* Gradient Overlay */}
+                {/* Cinematic Gradient Overlay */}
                 <div style={{
                     position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    background: 'linear-gradient(to top, #0f172a 0%, rgba(15, 23, 42, 0.7) 50%, transparent 100%)'
+                    inset: 0,
+                    background: 'linear-gradient(to top, #0f172a 0%, rgba(15, 23, 42, 0.8) 40%, rgba(15, 23, 42, 0.2) 70%, transparent 100%)',
+                    zIndex: 1
                 }}></div>
 
                 {/* Content */}
@@ -56,55 +52,76 @@ const HeroCard = ({ article }) => {
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    padding: '40px',
-                    zIndex: 2
+                    padding: '60px 40px',
+                    zIndex: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-end',
+                    height: '100%'
                 }}>
-                    <span style={{
-                        background: 'var(--accent-primary)',
-                        color: '#fff',
-                        padding: '6px 16px',
-                        borderRadius: '99px',
-                        fontSize: '0.85rem',
-                        fontWeight: 700,
-                        textTransform: 'uppercase',
-                        letterSpacing: '1px',
-                        marginBottom: '15px',
-                        display: 'inline-block'
+                    <div style={{
+                        transform: 'translateY(0)',
+                        transition: 'transform 0.4s ease-out'
                     }}>
-                        {source.name}
-                    </span>
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '12px',
+                            marginBottom: '20px'
+                        }}>
+                            <span style={{
+                                background: 'var(--accent-primary)',
+                                color: '#0f172a',
+                                padding: '6px 14px',
+                                borderRadius: '4px',
+                                fontSize: '0.8rem',
+                                fontWeight: 800,
+                                textTransform: 'uppercase',
+                                letterSpacing: '1.5px',
+                            }}>
+                                {source.name || 'News'}
+                            </span>
+                            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', fontWeight: 500 }}>
+                                {publishedAt ? format(new Date(publishedAt), 'MMMM d, yyyy') : 'Just Now'}
+                            </span>
+                        </div>
 
-                    <h1 style={{
-                        fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-                        color: '#fff',
-                        marginBottom: '15px',
-                        maxWidth: '900px',
-                        textShadow: '0 2px 10px rgba(0,0,0,0.5)',
-                        lineHeight: 1.1
-                    }}>
-                        {title}
-                    </h1>
+                        <h1 style={{
+                            fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
+                            color: '#fff',
+                            marginBottom: '24px',
+                            maxWidth: '1100px',
+                            lineHeight: 1.05,
+                            fontWeight: 800,
+                            letterSpacing: '-0.03em',
+                            fontFamily: "'Inter', sans-serif" // More modern, tech feel
+                        }}>
+                            {title}
+                        </h1>
 
-                    <p style={{
-                        fontSize: '1.1rem',
-                        color: '#cbd5e1',
-                        maxWidth: '700px',
-                        marginBottom: '25px',
-                        display: '-webkit-box',
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden'
-                    }}>
-                        {description}
-                    </p>
-
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                        <button className="btn btn-primary">Read Full Story</button>
-                        <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
-                            {publishedAt ? format(new Date(publishedAt), 'MMMM d, yyyy') : ''}
-                        </span>
+                        <p style={{
+                            fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
+                            color: '#e2e8f0',
+                            maxWidth: '800px',
+                            lineHeight: 1.6,
+                            marginBottom: '32px',
+                            display: '-webkit-box',
+                            WebkitLineClamp: 3,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden',
+                            fontWeight: 400
+                        }}>
+                            {description}
+                        </p>
                     </div>
                 </div>
+
+                {/* CSS Transition Inject for hover effects */}
+                <style>{`
+                    .hero-card:hover .hero-bg {
+                        transform: scale(1.05);
+                    }
+                `}</style>
             </article>
         </a>
     );
