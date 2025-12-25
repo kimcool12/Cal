@@ -36,7 +36,7 @@ const MOCK_ARTICLES = [
         author: 'Demo User',
         title: 'Fullstack Interactions Ready',
         description: 'You can now like and comment on articles. Data is persisted in SQLite.',
-        url: 'https://example.com/demo',
+        url: 'https://github.com',
         urlToImage: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&q=80&w=800',
         publishedAt: new Date().toISOString(),
         content: '...'
@@ -46,7 +46,7 @@ const MOCK_ARTICLES = [
         author: 'Maria Francis',
         title: 'Sustainable Architecture: Building for the Future',
         description: 'New eco-friendly materials are revolutionizing the construction industry.',
-        url: '#',
+        url: 'https://www.archdaily.com',
         urlToImage: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=800',
         publishedAt: new Date(Date.now() - 250000000).toISOString(),
         content: '...'
@@ -56,7 +56,7 @@ const MOCK_ARTICLES = [
         author: 'Alex Wilhelm',
         title: 'The Next Generation of Quantum Computing',
         description: 'Major breakthroughs in qubit stability announced at global summit.',
-        url: '#',
+        url: 'https://techcrunch.com',
         urlToImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800',
         publishedAt: new Date(Date.now() - 400000000).toISOString(),
         content: '...'
@@ -66,7 +66,7 @@ const MOCK_ARTICLES = [
         author: 'Chef Ramsey',
         title: 'Fusion Cuisine: East Meets West',
         description: 'Exploring the delicious combinations of Asian and European flavors.',
-        url: '#',
+        url: 'https://www.eater.com',
         urlToImage: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800',
         publishedAt: new Date(Date.now() - 600000000).toISOString(),
         content: '...'
@@ -76,7 +76,7 @@ const MOCK_ARTICLES = [
         author: 'Jessica Globe',
         title: 'Hidden Gems of the Mediterranean',
         description: 'Escape the crowds and discover these untouched island paradises.',
-        url: '#',
+        url: 'https://www.travelweekly.com',
         urlToImage: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800',
         publishedAt: new Date(Date.now() - 800000000).toISOString(),
         content: '...'

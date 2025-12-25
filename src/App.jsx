@@ -7,8 +7,21 @@ import StatusMessage from './components/StatusMessage';
 import { useNews } from './hooks/useNews';
 import './App.css';
 
+const CATEGORY_RESOURCES = {
+  general: { name: 'BBC News', url: 'https://www.bbc.com/news' },
+  business: { name: 'Bloomberg', url: 'https://www.bloomberg.com' },
+  technology: { name: 'TechCrunch', url: 'https://techcrunch.com' },
+  entertainment: { name: 'Variety', url: 'https://variety.com' },
+  sports: { name: 'ESPN', url: 'https://www.espn.com' },
+  science: { name: 'ScienceDaily', url: 'https://www.sciencedaily.com' },
+  health: { name: 'Healthline', url: 'https://www.healthline.com' }
+};
+
 function App() {
   const { articles, loading, error, category, setCategory, handleSearch } = useNews();
+
+  const activeValidCategory = category || 'general';
+  const resource = CATEGORY_RESOURCES[activeValidCategory];
 
   return (
     <div className="app-layout">
@@ -16,6 +29,8 @@ function App() {
 
       <main className="main-content container">
         <CategoryFilter activeCategory={category} onSelect={setCategory} />
+
+
 
         {loading && <StatusMessage type="loading" />}
 
@@ -59,6 +74,27 @@ function App() {
         borderTop: '1px solid var(--glass-border)',
         marginTop: 'auto'
       }}>
+        {resource && (
+          <div style={{ marginBottom: '20px' }}>
+            <a
+              href={resource.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: 'var(--accent-secondary)',
+                textDecoration: 'none',
+                fontWeight: 500,
+                fontSize: '0.9rem',
+                borderBottom: '1px dashed var(--accent-secondary)',
+                paddingBottom: '2px'
+              }}
+              onMouseEnter={(e) => e.target.style.borderBottomStyle = 'solid'}
+              onMouseLeave={(e) => e.target.style.borderBottomStyle = 'dashed'}
+            >
+              Visit {resource.name} for more {activeValidCategory} news &rarr;
+            </a>
+          </div>
+        )}
         <p>© {new Date().getFullYear()} NewsToday. Designed for excellence.</p>
       </footer>
     </div>
